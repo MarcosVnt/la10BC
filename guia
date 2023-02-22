@@ -1,0 +1,53 @@
+
+
+
+
+04. Showing Chirps
+
+
+ChirpController
+chirp model
+
+resources/js/Components/Chirp.vue
+
+
+resources/js/Pages/Chirps/Index.vue
+
+npm install dayjs
+<small class="ml-2 text-sm text-gray-600">{{ dayjs(chirp.created_at).fromNow() }}</small>
+
+
+
+05. Editing Chirps
+
+routing 
+->only(['index', 'store', 'update'])
+
+
+resources/js/Components/Chirp.vue
+
+
+ChirpController
+
+
+Authorization
+php artisan make:policy ChirpPolicy --model=Chirp
+app/Policies/ChirpPolicy.php 
+
+
+06. Deleting Chirps
+Routing
+->only(['index', 'store', 'update', 'destroy'])
+
+Updating our controller
+
+Authorization
+delete
+return $this->update($user, $chirp);
+
+
+
+
+
+
+
