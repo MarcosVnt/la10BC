@@ -46,8 +46,39 @@ delete
 return $this->update($user, $chirp);
 
 
+Updating our component
+resources/js/Components/Chirp.vue
 
 
+07. Notifications & Events
+
+Creating the notification
+
+php artisan make:notification NewChirp
+app/Notifications/NewChirp.php
+
+
+Crear envento 
+1 evento multiples oyentes que no dependan entre si ...
+
+php artisan make:event ChirpCreated 
+
+
+enviamos 1 evento por cada chirp creado ... 
+
+cambiamos app/modelos/CHipr
+
+creamos detector de eventos ...
+escuchar evento ...
+
+php artisan make:listener SendChirpCreatedNotifications --event=ChirpCreated
+
+crado en app/listeners
+
+actualizamos para enviar notificaciones ...
+
+Vinculamos detector de eventos a levento .. 
+EventServiceProvider
 
 
 
